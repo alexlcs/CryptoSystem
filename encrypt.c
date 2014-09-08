@@ -106,7 +106,7 @@ void encrypt(char *buffer, int bufferSize, char* file)
 	int i;
 	
 	cipher = malloc(bufferSize* sizeof(char));
-	cipherFile= fopen("enctest.txt","w");
+	cipherFile= fopen("sss.txt","w");
 	
 	if(cipherFile==NULL)
 	{

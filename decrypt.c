@@ -10,14 +10,14 @@ int main()
 {
 	FILE *file;
 	char *buffer;
-	char filename[] = "enctest.txt";
+	char filename[] = "sss.txt";
 	int size,i;
 	char c;
 
 	size=0, i=0;
 	c='0';
 	
-	printf("THis is a test\n");
+	//printf("THis is a test\n");
 	
 	file = fopen(filename, "r");
 
@@ -39,7 +39,9 @@ int main()
 	}
 	buffer[i]='\0';
 	
-	fputs(buffer, stdout);
+	decrypt(buffer, size);
+
+	//fputs(buffer, stdout);
 	fclose(file);
 	
 	//encrypt(buffer,i, filename);
@@ -54,7 +56,22 @@ int main()
 void decrypt(char *buffer, int bufferSize)
 {
 	FILE *file;
+	int i;
 
+	text = malloc(bufferSize * sizeof(char));
+	file = fopen("ppp.txt", "w");
+
+	if(file == NULL)
+	{
+		perror("Error could not open file!\n");
+		exit(1);
+	}
+
+	reTransport(buffer, bufferSize);
+	reSubstitute(text, sizeof(text));
+
+	fclose(file);
+	free(buffer);
 }
 
 
@@ -66,6 +83,9 @@ void reSubstitute(char *stream, int streamSize)
 
 void reTransport(char *stream, int streamSize)
 {
-
-
+	// here Moaan will make changes
+	// to the "text" variable, and 
+	// "reSubstitute" will use that 
+	// "text" variable to reSubstitute
+	// content
 }
